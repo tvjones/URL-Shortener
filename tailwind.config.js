@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./dist/**/*.{html,js}"],
   theme: {
+    screens:{
+      'sm':{'min':'300px', 'max':'900px'},
+    },
     extend: {},
   },
   plugins: [],
-   "scripts":{
-    "build":"tailwindcss build style.css -o css/style.css"
-  }
 }

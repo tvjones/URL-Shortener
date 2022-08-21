@@ -5,11 +5,11 @@ async function getURL() {
 
   //if no url is entered display error message
   if (longURL === "") {
-    inputField.className = "p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative placeholder:text-[#ff6666] border-[#ff6666] border-[2px]"
-    errorMessage.className = "w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic block"
+    inputField.className = "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative placeholder:text-[#ff6666] border-[#ff6666] border-[2px]"
+    errorMessage.className = "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] block"
   } else {
-    errorMessage.className = "w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic hidden"
-    inputField.className = "p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative"
+    errorMessage.className = "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] hidden"
+    inputField.className = "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative"
     url = "https://api.shrtco.de/v2/shorten?url=" + longURL;
     console.log(url);
     let response = await fetch(url);
