@@ -26,13 +26,14 @@ const addLink = (longLink, shortLink) => {
   const ogLink = document.createElement("p");
   const newLink = document.createElement("a");
   const copy = document.createElement("button");
+  const horizontalRule = document.createElement("hr")
 
-
+  horizontalRule.className = "w-[100%] h-[4px] "
   copy.addEventListener("click", () => {
     //change text and colour of button
     copy.innerHTML = "Copied!";
     copy.className =
-      "text-white rounded border-x-[2rem] h-[90%] border-y-[1rem] border-[#3b3054] bg-[#3b3054]";
+      "sm:w-[100%] sm:block text-white rounded border-x-[2rem] h-[90%] border-y-[1rem] border-[#3b3054] bg-[#3b3054]";
 
     //copy text to clipboard
     navigator.clipboard.writeText(newLink);
@@ -42,15 +43,18 @@ const addLink = (longLink, shortLink) => {
   newLink.href = shortLink;
   newLink.target = "_blank";
   ogLink.innerHTML = longLink;
+  newLink.className = "text-[#2acfcf]"
   copy.innerHTML = "Copy";
   copy.className =
-    "text-white rounded border-x-[2rem] h-[90%] border-y-[1rem] border-[#2acfcf] bg-[#2acfcf]";
+    "sm:w-[100%] sm:block text-white rounded border-x-[2rem] h-[90%] border-y-[1rem] border-[#2acfcf] bg-[#2acfcf]";
   innerDiv.appendChild(newLink);
   innerDiv.appendChild(copy);
-  innerDiv.className = "w-[30%] flex justify-between";
+  innerDiv.className = "sm:m-auto sm:w-[100%] px-[2rem] w-[30%] sm:block flex justify-between";
   outerDiv.className =
-    "rounded flex m-auto justify-between px-[2rem]  my-[3vh] py-[1rem] bg-white w-[80%]";
+    "sm:block rounded flex m-auto justify-between  my-[3vh] py-[1rem] bg-white w-[80%]";
+  ogLink.className = "px-[2rem] py-[1rem]"
   outerDiv.appendChild(ogLink);
+  outerDiv.appendChild(horizontalRule);
   outerDiv.appendChild(innerDiv);
 
   console.log(innerDiv);
@@ -70,7 +74,7 @@ const addLink = (longLink, shortLink) => {
 
   //add 8vh to the padding-top
   //coverting from vh to px
-  let additionalPadding = document.documentElement.clientHeight * 0.1;
+  let additionalPadding = document.documentElement.clientHeight * 0.18;
   const finalPadding = currentPadding + additionalPadding;
 
   stats.style.paddingTop = finalPadding.toString() + "px";
