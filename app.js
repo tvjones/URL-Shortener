@@ -28,7 +28,7 @@ const addLink = (longLink, shortLink) => {
   const copy = document.createElement("button");
   const horizontalRule = document.createElement("hr")
 
-  horizontalRule.className = "w-[100%] h-[4px] "
+  horizontalRule.className = "w-[100%] h-[4px] hidden sm:block"
   copy.addEventListener("click", () => {
     //change text and colour of button
     copy.innerHTML = "Copied!";
@@ -74,8 +74,10 @@ const addLink = (longLink, shortLink) => {
 
   //add 8vh to the padding-top
   //coverting from vh to px
-  let additionalPadding = document.documentElement.clientHeight * 0.18;
+  let additionalPadding = document.documentElement.clientHeight * 0.15;
   const finalPadding = currentPadding + additionalPadding;
 
-  stats.style.paddingTop = finalPadding.toString() + "px";
+  //stats.style.paddingTop = finalPadding.toString() + "px";
+  stats.style.setProperty("paddingTop", finalPadding.toString() + "px","important");
+  console.log(stats.style.paddingTop)
 };
