@@ -1,15 +1,19 @@
 async function getURL() {
-  let inputField =  document.getElementById("url-entered")
+  let inputField = document.getElementById("url-entered");
   let longURL = inputField.value;
-  let errorMessage = document.getElementById('error-message');
+  let errorMessage = document.getElementById("error-message");
 
   //if no url is entered display error message
   if (longURL === "") {
-    inputField.className = "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative placeholder:text-[#ff6666] border-[#ff6666] border-[2px]"
-    errorMessage.className = "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] block"
+    inputField.className =
+      "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative placeholder:text-[#ff6666] border-[#ff6666] border-[2px]";
+    errorMessage.className =
+      "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] block";
   } else {
-    errorMessage.className = "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] hidden "
-    inputField.className = "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative"
+    errorMessage.className =
+      "sm:w-[70%] sm:m-auto w-[80%] text-[1.5rem] relative bottom-[2vh] m-auto  text-[#ff6666] italic sm:top-[15%] hidden ";
+    inputField.className =
+      "sm:w-[90%] sm:h-[40%] sm:top-[15%] sm:m-auto sm:block p-[1.5rem] font-bold w-[80%] h-[50%] rounded text-[#9a9a9a] top-[27%] relative";
     url = "https://api.shrtco.de/v2/shorten?url=" + longURL;
     console.log(url);
     let response = await fetch(url);
@@ -26,9 +30,9 @@ const addLink = (longLink, shortLink) => {
   const ogLink = document.createElement("p");
   const newLink = document.createElement("a");
   const copy = document.createElement("button");
-  const horizontalRule = document.createElement("hr")
+  const horizontalRule = document.createElement("hr");
 
-  horizontalRule.className = "w-[100%] h-[4px] hidden sm:block"
+  horizontalRule.className = "w-[100%] h-[4px] hidden sm:block";
   copy.addEventListener("click", () => {
     //change text and colour of button
     copy.innerHTML = "Copied!";
@@ -43,16 +47,17 @@ const addLink = (longLink, shortLink) => {
   newLink.href = shortLink;
   newLink.target = "_blank";
   ogLink.innerHTML = longLink;
-  newLink.className = "text-[#2acfcf]"
+  newLink.className = "text-[#2acfcf]";
   copy.innerHTML = "Copy";
   copy.className =
     "sm:w-[100%] sm:block text-white rounded border-x-[2rem] h-[90%] border-y-[1rem] border-[#2acfcf] bg-[#2acfcf]";
   innerDiv.appendChild(newLink);
   innerDiv.appendChild(copy);
-  innerDiv.className = "sm:m-auto sm:w-[100%] px-[2rem] w-[30%] sm:block flex justify-between";
+  innerDiv.className =
+    "sm:m-auto sm:w-[100%] px-[2rem] w-[30%] sm:block flex justify-between";
   outerDiv.className =
     "sm:block rounded flex m-auto justify-between  my-[3vh] py-[1rem] bg-white w-[80%]";
-  ogLink.className = "px-[2rem] py-[1rem]"
+  ogLink.className = "px-[2rem] py-[1rem]";
   outerDiv.appendChild(ogLink);
   outerDiv.appendChild(horizontalRule);
   outerDiv.appendChild(innerDiv);
@@ -78,5 +83,26 @@ const addLink = (longLink, shortLink) => {
   const finalPadding = currentPadding + additionalPadding;
 
   stats.style.paddingTop = finalPadding.toString() + "px";
-  
+};
+
+//show mobile menu
+const displayMobileNav = () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const menu = document.getElementById("mobile-menu");
+
+  console.log(menu.className);
+
+  console.log(menu.style.display);
+  if (
+    menu.className ===
+    "hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold"
+  ) {
+    menu.className =
+      "sm:block hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
+    console.log("1");
+  } else {
+    menu.className =
+      "hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
+    console.log("2");
+  }
 };
