@@ -77,7 +77,6 @@ const addLink = (longLink, shortLink) => {
   let additionalPadding = document.documentElement.clientHeight * 0.15;
   const finalPadding = currentPadding + additionalPadding;
 
-  //stats.style.paddingTop = finalPadding.toString() + "px";
-  stats.style.setProperty("paddingTop", finalPadding.toString() + "px","important");
-  console.log(stats.style.paddingTop)
+  stats.style.paddingTop = finalPadding.toString() + "px";
+  
 };
