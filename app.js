@@ -95,14 +95,14 @@ const displayMobileNav = () => {
   console.log(menu.style.display);
   if (
     menu.className ===
-    "hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold"
+    "hidden left-[0] right-[0] my-[0] mx-[auto] absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold"
   ) {
     menu.className =
-      "sm:block hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
+      "sm:block hidden left-[0] right-[0] my-[0] mx-[auto] absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
     console.log("1");
   } else {
     menu.className =
-      "hidden absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
+      "hidden left-[0] right-[0] my-[0] mx-[auto] absolute w-[90%] p-[3rem] bg-[#180047] rounded-[10px] text-[1.5rem] text-white font-bold";
     console.log("2");
   }
 };
