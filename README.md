@@ -3,6 +3,8 @@
 
 This project was a challenge from Front End Mentor (https://www.frontendmentor.io/home). The aim was to replicate the design given and add functionality to the input form in the form of URL shortening through the use of an API. Plain Javascript was using and the front-end framework TailWind CSS was used for styling.
 
+Live link: https://url-shortener-tvjones.vercel.app/
+
 ## Acknowledgements
 
  Front End Mentor - Providing the challenge (https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G)
